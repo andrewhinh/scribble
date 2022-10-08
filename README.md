@@ -1,5 +1,7 @@
-# tamu
-Project for the TAMU Datathon
+# Comic Book OCR and Text Generation
 
-## Setup
-- Download folder from https://drive.google.com/drive/folders/1dv0Teg8E4NCX2QlzmA-YUeeBs36v_7Gb?usp=sharing
+## Notes
+- Project for the TAMU Datathon to solve the (CBRE Challenge: Get in Line)[https://tamudatathon.com/challenges/docs/cbre] and the (Best Use of NLP by Cohere - MLH)[https://tamudatathon.com/challenges/docs/mlh_challenges#best-use-of-nlp-by-cohere---mlh] challenges
+
+## Credit
+- Cohere for their text generation API
