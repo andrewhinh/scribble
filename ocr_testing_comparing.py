@@ -12,10 +12,11 @@ def similar(a, b):
 
 def extract_text(img_path, show=False):
     img = cv2.imread(img_path)
-    image = imutils.resize(img, width=500)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
-    results = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+    img = imutils.resize(img, width=500, height=500)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+    img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 41)
+    results = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT, lang='eng')
 
     for i in range(0, len(results["text"])):
         x = results["left"][i]
@@ -40,7 +41,7 @@ def extract_text(img_path, show=False):
     return ' '.join([i for i in results['text'] if len(i) > 0])
 
 
-def actuall_text(path):
+def actual_text(path):
     lines = []
     with open(path, 'r') as f:
         for line in f.readlines():
@@ -53,7 +54,7 @@ def actuall_text(path):
 
 # i: 1-21
 def comparing(i):
-    label = actuall_text(f'./training-strips/labels/cartoon{i}.txt')
+    label = actual_text(f'./training-strips/labels/cartoon{i}.txt')
     ocr = extract_text(f'./training-strips/images/cartoon{i}.png')
     return similar(label, ocr)
 
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     # t = extract_text(path, show=False)
     # print(t)
 
-    # a = actuall_text("./training-strips/labels/cartoon1.txt")
+    # a = actual_text("./training-strips/labels/cartoon1.txt")
     # print(a)
 
     accs = []
