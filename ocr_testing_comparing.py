@@ -9,6 +9,12 @@ def similar(a, b):
     # 1 is identical, 0 is completely different
     return SequenceMatcher(None, a, b).ratio()
 
+def is_good_word(s):
+    if len(s) == 0:
+        return False
+    if len(s) == 1 and s.lower() not in ['a', 'i']:
+        return False
+    return True
 
 def extract_text(img_path, show=False):
     img = cv2.imread(img_path)
@@ -38,7 +44,7 @@ def extract_text(img_path, show=False):
         cv2.imshow("Image", img)
         cv2.waitKey(0)
 
-    return ' '.join([i for i in results['text'] if len(i) > 0])
+    return ' '.join([i for i in results['text'] if is_good_word(i)])
 
 
 def actual_text(path):
