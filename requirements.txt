@@ -1,2 +1,4 @@
 pytesseract==0.3.10
 gdown==4.5.1
+numpy==1.22.2
+matplotlib==3.5.1
