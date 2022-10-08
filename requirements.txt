@@ -1,2 +1,4 @@
 pytesseract==0.3.10
 opencv-python==4.6.0.66
+cohere==2.5.0
+python-dotenv==0.19.2
