@@ -2,7 +2,7 @@
 
 ## Setup
 1. Clone repo.
-2. Activate python venv using env or windows-env, whichever OS you are on.
+2. Activate the python venv using `env` or `windows-env`, whichever OS you are on.
 3. Run `make pip-tools` to download the dependencies.
 
 ## Notes
