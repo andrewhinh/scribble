@@ -1,6 +1,6 @@
 # Comic Book OCR and Text Generation
 
-## Setup
+## Setup for Reproducing Results
 1. Clone repo.
 2. Activate the python venv using `env` or `windows-env`, whichever OS you are on.
 3. Run `make pip-tools` to download the dependencies.
@@ -10,5 +10,4 @@
 
 ## Credit
 - Tesseract for their [OCR engine](https://github.com/tesseract-ocr/tesseract).
-- [Niels Rogge](https://huggingface.co/nielsr) for his [TROCR code](https://huggingface.co/docs/transformers/main/model_doc/trocr).
 - [Cohere.ai](https://cohere.ai/) for their text generation API.
