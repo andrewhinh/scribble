@@ -66,4 +66,10 @@ if __name__ == "__main__":
     # a = actuall_text("./training-strips/labels/cartoon1.txt")
     # print(a)
 
-    print(comparing(1))
+    accs = []
+    for i in range(1, 22):
+        acc = comparing(i)
+        print(f"cartoon{i}: {acc}")
+        accs.append(acc)
+
+    print(f"\naverage: {sum(accs) / len(accs)}")
