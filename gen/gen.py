@@ -20,7 +20,6 @@ class Gen:
     """
     def __init__(self): 
         # Variables
-        self.max_tokens=20
         self.model='small'
         load_dotenv()
         self.COHERE_APIKEY = os.getenv('COHERE_APIKEY')
@@ -33,7 +32,7 @@ class Gen:
             return False
         return True
         
-    def predict(self, image: Union[str, Path, Image.Image]) -> str:
+    def predict(self, image: Union[str, Path, Image.Image], max_tokens: int) -> str:
         if isinstance(image, Image.Image): img = np.asarray(image)
         else: img = cv2.imread(image)
         img = imutils.resize(img, width=500, height=500)
@@ -60,7 +59,7 @@ class Gen:
 
         prompt = ' '.join([i for i in results['text'] if self.is_good_word(i)])
 
-        response = self.co.generate(prompt=prompt, max_tokens=self.max_tokens, model=self.model)
+        response = self.co.generate(prompt=prompt, max_tokens=max_tokens, model=self.model)
         return prompt, response.generations[0].text
 
     def similar(self, a, b):
@@ -92,11 +91,13 @@ def main():
     # Inputs
     parser.add_argument("--image", type=str, required=True)
 
+    parser.add_argument("--max_tokens", type=int, required=True)
+
     args = parser.parse_args()
 
     # Answering question
     pipeline = Gen()
-    prompt, gen = pipeline.predict(args.image)
+    prompt, gen = pipeline.predict(args.image, args.max_tokens)
 
     print("OCR:" + prompt + '\n' + "Generated text:" + gen)
     
