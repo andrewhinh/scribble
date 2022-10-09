@@ -59,7 +59,7 @@ def make_frontend(
     # build a basic browser interface to a Python function
     frontend = gr.Interface(
         fn=fn,  # which Python function are we interacting with?
-        outputs=[gr.components.Textbox(), gr.components.Textbox()],  # what output widgets does it need? the default text widget
+        outputs=[gr.components.Textbox(label="OCR"), gr.components.Textbox(label="Am I a writer?...")],  # what output widgets does it need? the default text widget
         # what input widgets does it need? we configure an image widget
         inputs=gr.components.Image(type="pil", label="Comic Strip"),
         title="Scribble",  # what should we display at the top of the page?
