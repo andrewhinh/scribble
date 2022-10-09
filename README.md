@@ -2,8 +2,8 @@
 
 ## Setup to run Gradio App locally
 1. Clone repo.
-2. Activate the python venv using `env` (source env/bin/activate) or `windows-env` (<venv>\Scripts\activate.bat).
-3. Run `make pip-tools` to download the dependencies.
+2. Create a python3 venv using `source env/bin/activate` or `<venv>\Scripts\activate.bat`.
+3. Run `make install` to download the dependencies.
 4. Run `export COHERE_APIKEY=REPLACE`, replacing `REPLACE` with your Cohere API key.
 5. Run `app.py` (with `--flagging` if you want to allow users to flag generations as incorrect, offensive, etc.), and you now have a local Gradio app!
 

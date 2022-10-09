@@ -1,4 +1,4 @@
 # Compile and install exact pip packages
-pip-tools:
+install:
 	pip install -r requirements.txt
-	. ./install.sh
+	sudo apt-get install tesseract-ocr
