@@ -5,6 +5,7 @@ import logging
 import os
 from pathlib import Path
 from typing import Callable
+import random
 
 import gradio as gr
 from PIL.Image import Image
@@ -20,6 +21,9 @@ FAVICON = APP_DIR / "logo.png"  # path to a small image for display in browser t
 README = APP_DIR / "README.md"  # path to an app readme file in HTML/markdown
 
 DEFAULT_PORT = 11700
+
+max_tokens_min = 20
+max_tokens_max = 200
 
 
 def main(args):
@@ -44,7 +48,8 @@ def make_frontend(
     img_example_fnames = [elem for elem in os.listdir(img_examples_dir) if elem.endswith(".png")]
     img_example_paths = [img_examples_dir / fname for fname in img_example_fnames]
 
-    examples = [str(img_path) for img_path in img_example_paths]
+    random_numbers = list(range(20, 201))
+    examples = [[str(img_path), random.choice(random_numbers)] for img_path in img_example_paths]
 
     allow_flagging = "never"
     if flagging: # logging user feedback to a local CSV file
@@ -61,7 +66,7 @@ def make_frontend(
         fn=fn,  # which Python function are we interacting with?
         outputs=[gr.components.Textbox(label="OCR"), gr.components.Textbox(label="Am I a writer?...")],  # what output widgets does it need? the default text widget
         # what input widgets does it need? we configure an image widget
-        inputs=[gr.components.Image(type="pil", label="Comic Strip"), gr.Slider(20, 200)],
+        inputs=[gr.components.Image(type="pil", label="Comic Strip"), gr.Slider(max_tokens_min, max_tokens_max)],
         title="Scribble",  # what should we display at the top of the page?
         thumbnail=FAVICON,  # what should we display when the link is shared, e.g. on social media?
         description=__doc__,  # what should we display just above the interface?
