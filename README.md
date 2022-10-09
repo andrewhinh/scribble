@@ -1,6 +1,6 @@
 # scribble
 
-A website for comic book OCR and text generation: [Click here](https://16290.gradio.app)
+Comic book OCR and text generation
 
 ## Setup to run Gradio App locally
 1. Clone repo.
@@ -11,7 +11,8 @@ A website for comic book OCR and text generation: [Click here](https://16290.gra
 
 ## Notes
 - Project for the TAMU Datathon to solve the [CBRE Challenge: Get in Line](https://tamudatathon.com/challenges/docs/cbre) and the [Best Use of NLP by Cohere - MLH](https://tamudatathon.com/challenges/docs/mlh_challenges#best-use-of-nlp-by-cohere---mlh) challenges.
-- Since we are open-sourcing the necessary code for others to create their own Gradio link, please only use the one provided in this repo for privacy reasons.
+- When evaluated with difflib.SequenceMatcher, the OCR model achieves ~89% average accuracy when evaluated on the challenge-provided files found [here](https://tamudatathon.com/challenges/assets/files/training-strips-3b6c286bdfd746b25ebd59e2225c0b50.zip).
+- Since we are open-sourcing the necessary code for others to create their own Gradio link, please be mindful of what data you submit to others' links and the privacy of the data people submit to your links.
 
 ## Credit
 - Tesseract for their [OCR engine](https://github.com/tesseract-ocr/tesseract).
