@@ -2,7 +2,7 @@
 
 Comic Book Strip OCR and Text Generation
 
-## Setup to run Gradio App locally
+## Setup to Run a Gradio App Locally
 1. Clone repo.
 2. Create a python3 venv using `python3 -m venv env` and then `source env/bin/activate` or `<venv>\Scripts\activate.bat`, depending on your OS.
 3. Run `make install` to download the dependencies.
