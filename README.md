@@ -1,6 +1,6 @@
 # scribble
 
-A website for comic book OCR and text generation, currently [here](https://20389.gradio.app).
+Comic Book Strip OCR and Text Generation
 
 ## Setup to run Gradio App locally
 1. Clone repo.
