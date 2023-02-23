@@ -4,4 +4,4 @@ opencv-python==4.6.0.66
 pytesseract==0.3.10
 transformers==4.22.2
 python-dotenv==0.19.2
-gradio==3.4.1
+gradio==3.13.2
