@@ -17,6 +17,7 @@ Authors' explanation [here](https://www.youtube.com/watch?v=-Z06KjGyqKI).
 - Project for the [TAMU Datathon](https://tamudatathon.com/) to solve the [CBRE Challenge: Get in Line](https://tamudatathon.com/challenges/docs/cbre) and the [Best Use of NLP by Cohere - MLH](https://tamudatathon.com/challenges/docs/mlh_challenges#best-use-of-nlp-by-cohere---mlh) challenges.
 - When evaluated with difflib.SequenceMatcher on the challenge-provided files found [here](https://tamudatathon.com/challenges/assets/files/training-strips-3b6c286bdfd746b25ebd59e2225c0b50.zip), the OCR model achieves ~89% average accuracy for all the example comic strips.
 - Since we are open-sourcing the necessary code for others to create their own Gradio link, please be mindful of what data you submit to others' links and the privacy of the data people submit to your links.
+- Check out the [Devpost](https://devpost.com/software/scribble-8cesy2) for more info.
 
 ## Credit
 - Tesseract for their [OCR engine](https://github.com/tesseract-ocr/tesseract).
